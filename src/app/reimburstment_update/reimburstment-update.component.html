@@ -1,0 +1,64 @@
+<div class="container mb-5">
+    <h2>Reimburstment Form</h2>
+    <div class="card mt-5">
+     <form #myForm="ngForm" (submit)="decideReimburstment()">
+      <div class="card-header bg-warning">Decision</div>
+      <div class="card-body">
+          
+            <div class="form-group">
+              <label for="id">Reimburstment ID : </label>
+              <!-- replaced text box for book id with the data being
+                  display directly using string interpolation on the page
+                  so that the user cannot update the primary key-->
+             {{ updateReimburstment.id }}
+             <form>
+              <select name="decision" class="custom-select"
+              id="status"  
+              name="status"
+              required
+              #status="ngModel"
+              [(ngModel)]="updateReimburstment.status">
+              <span 
+              *ngIf="status.invalid && status.touched" 
+              class="text-danger small">Status required!</span>>>
+                <option selected>{{updateReimburstment.status}}</option>
+                <option value="Resolved">RESOLVED</option>
+                <option value="PENDING">PENDING</option>
+                <option value="DECLINED">DECLINED</option>
+              </select>
+              <!-- <input type="text"
+              class="form-control" 
+              id="status"  
+              name="status"
+              required
+              #status="ngModel"
+              [(ngModel)]="updateReimburstment.status">
+              <span 
+              *ngIf="status.invalid && status.touched" 
+              class="text-danger small">Status required!</span> -->
+            </form>
+            <!-- <div class="form-group">
+                <label for="status">Status:</label>
+                <input type="text"
+                class="form-control" 
+                id="status"  
+                name="status"
+                required
+                #status="ngModel"
+                [(ngModel)]="updateReimburstment.status">
+                <span 
+                *ngIf="status.invalid && status.touched" 
+                class="text-danger small">Status required!</span>
+            </div> -->
+      </div> 
+      <div class="card-footer bg-warning">
+          <button 
+                type="submit" 
+                [disabled]='!myForm.valid'
+                class="btn btn-danger mr-5">Update</button>
+      </div>
+    </div>
+    </form>
+    </div>
+  </div>
+

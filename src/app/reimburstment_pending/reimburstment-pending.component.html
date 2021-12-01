@@ -1,0 +1,88 @@
+<div class="container">
+    <h2>List of Reimburstments</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr *ngIf= "retrieveUserEmployeeType() == 2">
+          <th>ID</th>
+          <th>Status</th>
+          <th>Amount</th>
+          <th>Date Created</th>
+          <th>Date Submitted</th>
+          <th>Employee ID</th>
+          <th></th>
+        </tr>
+        <tr *ngIf= "retrieveUserEmployeeType() == 1">
+          <th>ID</th>
+          <th>Status</th>
+          <th>Amount</th>
+          <th>Date Created</th>
+          <th>Date Submitted</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody *ngIf= "retrieveUserEmployeeType() == 2">
+        <tr *ngFor="let reimburstment of allReimburst">
+            <td>{{ reimburstment.id }}</td>
+            <td>{{ reimburstment.status}}</td>
+            <td>{{ reimburstment.amount }}</td>
+            <td>{{ reimburstment.date}}</td>
+            <td>{{ reimburstment.sumbitDate}}</td>
+            <td>{{ reimburstment.employeeId}}</td>
+            <!-- <td>
+                <button 
+                    type="button" 
+                    class="btn btn-primary small"
+                    (click)="goToEditComponent(reimburstment.id)">
+                    <span class="material-icons">edit</span>
+                </button>
+            </td> -->
+        </tr>
+      </tbody>
+      <tbody *ngIf= "retrieveUserEmployeeType() == 1">
+        <tr *ngFor="let reimburstment of allReimburst">
+            <td>{{ reimburstment.id }}</td>
+            <td>{{ reimburstment.status}}</td>
+            <td>{{ reimburstment.amount }}</td>
+            <td>{{ reimburstment.date}}</td>
+            <td>{{ reimburstment.sumbitDate}}</td>
+            <!-- <td>
+                <button 
+                    type="button" 
+                    class="btn btn-primary small"
+                    (click)="goToEditComponent(reimburstment.id)">
+                    <span class="material-icons">edit</span>
+                </button>
+            </td> -->
+        </tr>
+      </tbody>
+    </table>
+    <div *ngIf="retrieveUserEmployeeType() == 1">
+    <button 
+    type="button" 
+    class="btn btn-success bm-5"
+    (click)="toggleAdd()">
+    Request An Reimburstment
+    </button>
+    <div *ngIf="flag" >
+    <form #addForm="ngForm" class="form-inline tm-5" (submit)="addReimburstments()">
+        <label for="amount" class="mb-2 mr-sm-2">Amount</label>
+        <input 
+            type="number" 
+            class="form-control mb-2 mr-sm-2" 
+            id="amount" 
+            placeholder="Enter Amount" 
+            name="Amount"
+            required
+            #amount="ngModel"
+            [(ngModel)]="newReimburstment.amount">
+            <span 
+                *ngIf="amount.invalid && amount.touched" 
+                class="text-danger small">Amount required!</span>
+        <button 
+            type="submit" 
+            [disabled]="!addForm.valid"
+            class="btn btn-primary mb-2">ADD</button>
+      </form>
+     </div> 
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="container">
+    <h2>List of Employees</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Username</th>
+          <th>Address</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of allEmployees">
+            <td>{{ employee.id }}</td>
+            <td>{{ employee.userName }}</td>
+            <td>{{ employee.address }}</td>
+            <td>
+              <button 
+              type="button" 
+              class="btn btn-primary small"
+              (click)="viewEmployeeRoute(employee.id)">
+              <span class="material-icons">edit</span>
+          </button>
+        </td>
+        </tr>
+      </tbody>
+    </table>
+</div>
