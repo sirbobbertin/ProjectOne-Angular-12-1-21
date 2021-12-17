@@ -1,5 +1,6 @@
 .background{
-    background-image: url(../login/images/loginback3.jpg);
+    background-image: url(../login/images/loginback3.jpg); 
+
    background-size:cover;
    background-color: darkslategrey;
     background-position: center center;
