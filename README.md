@@ -2,11 +2,11 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.2.
 
-##Project Description
+## Project Description
 
 This small project is based on employees submitting reimbursements through a company website, and managers approving or denying those reimbursements
 
-##Technologies Used
+## Technologies Used
   -Angular, TypeScript
   -Eclispe, Java
   -PostgreSQL
@@ -14,7 +14,7 @@ This small project is based on employees submitting reimbursements through a com
   -Maven
   -Jackson
   
-##Features
+## Features
   -Employees can submit reimbursements (tracks which employee is submitting by user ID)
   -Employees can view their pending and resolved reimbursements seperately
   -Employees can update their profile infomation (Address & Password for now)
@@ -25,7 +25,7 @@ This small project is based on employees submitting reimbursements through a com
   -Home menu display's the user's username (Only displays name, will implement more designs)
   -Reimbursements, employees, managers are all stored in the database, PostgreSQL
   
-##To-do List
+## To-do List
   -Add design templates to the website for each section
   -Add form validations for login, and update sections
   -Convert backend code to SpringBoot
