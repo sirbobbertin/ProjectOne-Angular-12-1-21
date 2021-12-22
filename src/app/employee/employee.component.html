@@ -1,38 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</head>
-<body>
+<div class="container mb-5">
+  <h2 style="margin-top: 30px;">Account Information</h2>
+  <div class="card mt-5">
+    <div class="card-header bg-info text-white">USER ID: {{ userInfo.id }}</div>
+    <div class="card-body">
+      <form #myForm="ngForm" (submit)="editInfo()">
+        <div class="form-group">
+          <label for="userPassword">Password:</label>
 
-<div class="container">
-  <h2>Profile Information</h2>            
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Username</th>
-        <th>Password</th>
-        <th>Address</th>
-      </tr>
-    </thead>
-    <tbody>
-      
-        <td>{{userInfo.id}}</td>
-        <td>{{userInfo.userName}}</td>
-        <td>{{userInfo.password}}</td>
-        <td>{{userInfo.address}}</td>
-      
-    </tbody>
-  </table>
+          <!-- <span *ngIf="checkPassword == false; then thenBlockPassword; else elseBlock"></span>
+          <ng-template #thenBlockPassword>Please enter a valid password</ng-template>
+          <ng-template #elseBlock></ng-template> -->
+
+          <input type="text" class="form-control" id="userPassword" placeholder="Password" name="userPassword"
+            [(ngModel)]="updateInfo.password">
+        </div>
+        <div class="form-group">
+          <label for="userAddress">Address:</label>
+
+          <!-- <span *ngIf="checkUserAddress == false; then thenBlockAddress; else elseBlock"></span>
+          <ng-template #thenBlockAddress>Please enter an address</ng-template>
+          <ng-template #elseBlock></ng-template> -->
+
+          <input type="text" class="form-control" id="userAddress" placeholder="Address" name="userAddress"
+            [(ngModel)]="updateInfo.address" required>
+        </div>
+        <div class="card-footer bg-dark">
+          <button type="submit" class="btn btn-warning mr-5" [disabled]='!myForm.valid'>Update</button>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
-
-</body>
-</html>
-

@@ -38,19 +38,19 @@ export class LoginComponent implements OnInit {
     this.allEmployees=this.loadEmployees();
   }
 
-  validateLogin(){ 
+  // validateLogin(){ 
 
-    let validatedUser: User = this.userService.validateUser(this.newUsers);
-    if(validatedUser.userType != "" ){
-      this.authService.storeUser(validatedUser);
-      this.authService.isLoggedIn = true;
-    }
-    if(validatedUser.userType == "employee" ){
-      this.router.navigate(['menu']);
-    }else if(validatedUser.userType == "manager" ){
-      this.router.navigate(['menu']);
-    }
-  }
+  //   let validatedUser: User = this.userService.validateUser(this.newUsers);
+  //   if(validatedUser.userType != "" ){
+  //     this.authService.storeUser(validatedUser);
+  //     this.authService.isLoggedIn = true;
+  //   }
+  //   if(validatedUser.userType == "employee" ){
+  //     this.router.navigate(['menu']);
+  //   }else if(validatedUser.userType == "manager" ){
+  //     this.router.navigate(['menu']);
+  //   }
+  // }
   
   validateLoginHTTP(){
    this.userService.validateUserHTTPService(this.newUser).subscribe(
@@ -63,9 +63,9 @@ export class LoginComponent implements OnInit {
           this.authService.storeUserEmployee(response)
           this.authService.isLoggedIn = true;
         }
-        if(response.id == 1 ){
+        if(response.jobType == 1 ){
           this.router.navigate(['menu']);
-        }else if(response.id == 2 ){
+        }else if(response.jobType == 2 ){
           this.router.navigate(['menu']);
         }
       },

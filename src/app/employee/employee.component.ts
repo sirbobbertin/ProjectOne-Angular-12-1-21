@@ -39,6 +39,7 @@ updateInfo: Employee = {
 
   ngOnInit(): void {
    this.viewInfo();
+   
   }
 
   editInfo(){
@@ -57,6 +58,7 @@ updateInfo: Employee = {
     this.employeeService.viewInfoService(this.authService.retrieveUserEmployeeId()).subscribe(
     (response) => {
       this.userInfo = response;
+      this.updateInfo.id =response.id;
     },
     (error)=>{
       this.errorMsg = 'There was some internal error! Please try again later!';
