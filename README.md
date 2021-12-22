@@ -7,12 +7,16 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 This small project is based on employees submitting reimbursements through a company website, and managers approving or denying those reimbursements
 
 ## Technologies Used
-  * Angular, TypeScript
-  * Eclispe, Java
-  * PostgreSQL
-  * Javalin
-  * Maven
-  * Jackson
+  * Angular (Web Framework)
+  * Eclispe (IDE)
+  * PostgreSQL (Database)
+  * Javalin (Web FrameWork
+  * Apache Maven (Dependecy Management)
+  * Java (Programming language)
+  * Microsoft Visual Studio Code (Source Code Editor)
+  * Postman (API Framework)
+  * Apache Log4j2 (Logging Utility)
+  * JDBC (Java Database Connectivity)
   
 ## Features
   * Employees can submit reimbursements (tracks which employee is submitting by user ID)
